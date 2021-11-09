@@ -4,7 +4,7 @@
       <div class="col-auto">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Number of hours</mat-label>
-          <input matInput min="0" type="number" value="{{n}}" [formControl]="hoursFormControl">
+          <input matInput min="0" type="number" [formControl]="hoursFormControl">
           <mat-error *ngIf="!hoursFormControl.valid">
             Please enter a valid hours value
           </mat-error>

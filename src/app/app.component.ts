@@ -13,14 +13,13 @@ const ELEMENT_DATA: any[] = [
 })
 export class AppComponent {
   data: any[] = ELEMENT_DATA;
-  n: number | null = 0;
   hoursFormControl = new FormControl(0, [Validators.min(0)]);
 
   constructor(private consumService: ComsumptionService) {
   }
 
   refresh() {
-    this.consumService.getComsumptionByHours(this.n)
+    this.consumService.getComsumptionByHours(this.hoursFormControl.value)
       .subscribe(resp => {
         this.data = [];
         const keys = Object.keys(resp);
